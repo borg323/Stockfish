@@ -2,7 +2,7 @@ image:
 - Visual Studio 2019
 clone_depth: 1
 install:
-- cmd: set PATH=C:\msys64\mingw64\bin;%PATH%
+- cmd: set PATH=C:\msys64\mingw64\bin;C:\msys64\usr\bin;%PATH%
 build_script:
 - cmd: cd src
 - cmd: make build ARCH=x86-64-vnni512
