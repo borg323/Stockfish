@@ -2,7 +2,7 @@ image:
 - Visual Studio 2019
 clone_depth: 1
 install:
-- cmd: set PATH=C:\msys64\usr\bin;%PATH%
+- cmd: set PATH=C:\msys64\mingw64\bin;%PATH%
 build_script:
 - cmd: cd src
 - cmd: make build ARCH=x86-64-vnni512
@@ -10,6 +10,5 @@ build_script:
 artifacts:
   - path: stockfish.exe
     name: stockfish
-on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
 
