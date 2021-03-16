@@ -5,7 +5,7 @@ install:
 - cmd: set PATH=C:\msys64\mingw64\bin;C:\msys64\usr\bin;%PATH%
 build_script:
 - cmd: cd src
-- cmd: make build ARCH=x86-64-vnni512
+- cmd: make build COMP=mingw ARCH=x86-64-vnni512
 - cmd: copy stockfish.exe ..
 artifacts:
   - path: stockfish.exe
