@@ -3,9 +3,12 @@ image:
 clone_depth: 1
 install:
 - cmd: set PATH=C:\msys64\mingw64\bin;C:\msys64\usr\bin;%PATH%
+- cmd: appveyor DownloadFile https://github.com/xianyi/OpenBLAS/releases/download/v0.3.13/OpenBLAS-0.3.13-x64.zip
+- cmd: 7z x OpenBLAS-0.3.13-x64.zip -oC:\msys64\mingw64\
+
 build_script:
 - cmd: cd src
-- cmd: make build COMP=mingw ARCH=x86-64-vnni512
+- cmd: make build COMP=mingw ARCH=x86-64-vnni512 blas=yes
 - cmd: copy stockfish.exe ..
 artifacts:
   - path: stockfish.exe
